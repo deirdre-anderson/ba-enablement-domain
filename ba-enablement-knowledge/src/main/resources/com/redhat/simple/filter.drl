@@ -13,6 +13,7 @@ dialect "mvel"
 		Reason reason = new Reason();
 		reason.setReasonMessage( "business filtered: from Kansas" );
 		insert ( reason );
+		System.out.println("filter rule has completed");
 	
 end
 
