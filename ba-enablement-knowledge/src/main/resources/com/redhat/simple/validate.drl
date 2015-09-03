@@ -4,7 +4,7 @@ import com.redhat.*;
 
 
 rule "Validate Name Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -18,7 +18,7 @@ dialect "mvel"
 end
 
 rule "Validate Address Line 1 Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -27,12 +27,12 @@ dialect "mvel"
 		$responseCode = new String("validation error")
    		insert($responseCode)
    		$reason = new Reason()
-   		$reason.setReasonMessage("address line 1 is null")
-   		insert($reason)
+   		//$reason.setReasonMessage("address line 1 is null")
+   		//insert($reason)
 end
 
 rule "Validate Address Line 2 Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -46,7 +46,7 @@ dialect "mvel"
 end
 
 rule "Validate Phone Number Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -60,7 +60,7 @@ dialect "mvel"
 end
 
 rule "Validate City Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -74,7 +74,7 @@ dialect "mvel"
 end
 
 rule "Validate State Code Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -88,7 +88,7 @@ dialect "mvel"
 end
 
 rule "Validate Zip Code Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -102,7 +102,7 @@ dialect "mvel"
 end
 
 rule "Validate Federal Tax ID Not Null"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -120,7 +120,7 @@ end
 // Rules that check if a field is empty are below
 
 rule "Validate Name Not Empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -134,7 +134,7 @@ dialect "mvel"
 end
 
 rule "Validate Address Line 1 Not Empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -148,7 +148,7 @@ dialect "mvel"
 end
 
 rule "Validate Address Line 2 Not Empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -162,7 +162,7 @@ dialect "mvel"
 end
 
 rule "Validate Phone Number Not empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -176,7 +176,7 @@ dialect "mvel"
 end
 
 rule "Validate City Not Empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -190,7 +190,7 @@ dialect "mvel"
 end
 
 rule "Validate State Code Not Empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -204,7 +204,7 @@ dialect "mvel"
 end
 
 rule "Validate Zip Code Not Empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
@@ -212,13 +212,13 @@ dialect "mvel"
 	then
 		$responseCode = new String("validation error")
    		insert($responseCode)
-   		$reason = new Reason()
-   		$reason.setReasonMessage("zipcode is empty")
-   		insert($reason)
+   		//$reason = new Reason()
+   		//$reason.setReasonMessage("zipcode is empty")
+   		//insert($reason)
 end
 
 rule "Validate Federal Tax ID Not Empty"
-ruleflow-group "validation"
+ruleflow-group "validate"
 dialect "mvel"
 
 	when
