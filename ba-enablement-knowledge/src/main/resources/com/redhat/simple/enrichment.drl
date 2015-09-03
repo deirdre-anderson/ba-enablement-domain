@@ -1,0 +1,17 @@
+
+package com.redhat.simple;
+
+import com.redhat.*;
+
+rule "Enrich Tax ID"
+ruleflow-group "enrich"
+dialect "mvel"
+
+	when
+		$business : Business(federalTaxId!=null,federalTaxId!="",zipCode!=null, zipCode!="",federalTaxId.length==5)
+	then
+		modify ($business){
+			federalTaxId = $business.federalTaxId + "-" + $business.zipCode;
+		}
+		
+end

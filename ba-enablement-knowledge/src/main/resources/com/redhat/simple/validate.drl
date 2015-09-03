@@ -1,0 +1,232 @@
+package com.redhat.simple;
+
+import com.redhat.*;
+
+
+rule "Validate Name Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(name == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("name is null")
+   		insert($reason)
+end
+
+rule "Validate Address Line 1 Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(addressLine1 == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("address line 1 is null")
+   		insert($reason)
+end
+
+rule "Validate Address Line 2 Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(addressLine2 == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("address line 2 is null")
+   		insert($reason)
+end
+
+rule "Validate Phone Number Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(phoneNumber == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("phone number is null")
+   		insert($reason)
+end
+
+rule "Validate City Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(city == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("city is null")
+   		insert($reason)
+end
+
+rule "Validate State Code Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(stateCode == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("state code is null")
+   		insert($reason)
+end
+
+rule "Validate Zip Code Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(zipCode == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("zipcode is null")
+   		insert($reason)
+end
+
+rule "Validate Federal Tax ID Not Null"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(federalTaxId == null)
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("federal tax id is null")
+   		insert($reason)
+end
+
+// Rules that check if a rule is null are above
+// =======================================================================
+// Rules that check if a field is empty are below
+
+rule "Validate Name Not Empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(name == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("name is empty")
+   		insert($reason)
+end
+
+rule "Validate Address Line 1 Not Empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(addressLine1 == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("address line 1 is empty")
+   		insert($reason)
+end
+
+rule "Validate Address Line 2 Not Empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(addressLine2 == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("address line 2 is empty")
+   		insert($reason)
+end
+
+rule "Validate Phone Number Not empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(phoneNumber == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("phone number is empty")
+   		insert($reason)
+end
+
+rule "Validate City Not Empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(city == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("city is empty")
+   		insert($reason)
+end
+
+rule "Validate State Code Not Empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(stateCode == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("state code is empty")
+   		insert($reason)
+end
+
+rule "Validate Zip Code Not Empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(zipCode == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("zipcode is empty")
+   		insert($reason)
+end
+
+rule "Validate Federal Tax ID Not Empty"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business(federalTaxId == "")
+	then
+		$responseCode = new String("validation error")
+   		insert($responseCode)
+   		$reason = new Reason()
+   		$reason.setReasonMessage("federal tax id is empty")
+   		insert($reason)
+end
